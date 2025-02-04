@@ -1,0 +1,6 @@
+name = "my-cloudflare-app"
+type = "javascript"
+
+site = { bucket = "./dist" }
+
+account_id = "21e6159a412230ed1b0b60de398ad06a"
