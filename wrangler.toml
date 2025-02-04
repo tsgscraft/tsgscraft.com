@@ -1,6 +1,5 @@
 name = "my-cloudflare-app"
-type = "javascript"
-
-site = { bucket = "./dist" }
-
 account_id = "21e6159a412230ed1b0b60de398ad06a"
+
+pages_build_output_dir = "./dist"
+compatibility_date = "2025-02-04"
