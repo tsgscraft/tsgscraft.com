@@ -1,47 +1,50 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it! YAY" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+    <header class="header">
+      <h1 class="text-lg font-bold">tsgscraft.com</h1>
+      <h3 class="text-lg font-bold">Navigation</h3>
+      <nav class="header">
+        <ul class="flex gap-2">
+          <li class="sideways"><router-link to="/">Home</router-link></li>
+          <li class="sideways"><router-link to="/downloads">Downloads</router-link></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="flex-1 p-4 mt-20">
+      <router-view></router-view>
+    </main>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
+<script setup>
+</script>
+
+<style>
+body {
+  margin: 0;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+main {
+  position: fixed;
 }
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
+.header h1 {
+  position: absolute;
+  top: 0;
+  left: 20px;
+}
 
-  .logo {
-    margin: 0 2rem 0 0;
-  }
+.header h3 {
+  position: absolute;
+  top: 80px;
+  left: 30px;
+}
 
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+.header nav {
+  position: absolute;
+  top: 110px;
+  left: 0;
+}
+
+.sideways {
+  display: inline;
 }
 </style>
