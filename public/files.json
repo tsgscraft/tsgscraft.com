@@ -2,11 +2,13 @@
   {
     "name": "Plugin 1.0",
     "beschreibung": "Erstes Plugin zum Herunterladen.",
-    "datei": "/public/plugin_files/tempPlugin-1.0.jar"
+    "datei": "/public/plugin_files/tempPlugin-1.0.jar",
+    "disabled": false
   },
   {
     "name": "Plugin 2.0",
     "beschreibung": "Zweites Plugin zum Herunterladen.",
-    "datei": "/public/plugin_files/tempPlugin-1.0.jar"
+    "datei": "/public/plugin_files/tempPlugin-1.0.jar",
+    "disabled": true
   }
 ]

@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import Home from '../src/views/HomeView.vue'; // Your existing home component
-import Downloads from '../src/views/plugins/DownloadsView.vue'; // The new Downloads page
+import PluginsView from './views/plugins/PluginsView.vue'; // The new PluginsView page
 
 const routes = [
     {
@@ -9,9 +9,9 @@ const routes = [
         component: Home
     },
     {
-        path: '/downloads',
-        name: 'Downloads',
-        component: Downloads
+        path: '/plugins',
+        name: 'Plugins',
+        component: PluginsView
     }
 ];
 
