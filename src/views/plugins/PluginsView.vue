@@ -1,26 +1,26 @@
-<script setup>
-import { ref, onMounted } from 'vue'
-
-// Reaktive Variable für die Dateien
-const files = ref([])
-
-onMounted(() => {
-  // JSON-Daten laden, wenn die Komponente gemountet wurde
-  fetch('files.json')
-      .then(response => response.json())
-      .then(data => {
-        files.value = data
-      })
-      .catch(error => console.error('Fehler beim Laden der JSON-Daten:', error))
-})
-
-function testFunction (url) {
-  location.href = url
-}
-</script>
-
 <script>
 export default {
+    data() {
+      return {
+        downloads: []
+      };
+    },
+    mounted() {
+      // JSON-Daten von GitHub laden
+      fetch('https://raw.githubusercontent.com/tsgscraft/tsgscraft.com/refs/heads/master/public/files.json')
+          .then(response => {
+            if (!response.ok) {
+              throw new Error('Netzwerkantwort war nicht ok');
+            }
+            return response.json();
+          })
+          .then(data => {
+            this.downloads = data;
+          })
+          .catch(error => {
+            console.error('Fehler beim Laden der JSON-Daten:', error);
+          });
+    },
   methods: {
     downloadFile(url) {
       if (!url) {
@@ -40,7 +40,7 @@ export default {
     <p class="bit-left">Hier kannst du Dateien herunterladen.</p>
     <div id="card-container">
       <!-- Dynamisch Karten erstellen -->
-      <div v-for="item in files" :key="item.name" class="card">
+      <div v-for="item in downloads" :key="item.name" class="card">
         <div class="container">
           <h2><b>{{ item.name }}</b></h2>
           <p>{{ item.beschreibung }}</p>
