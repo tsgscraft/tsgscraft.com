@@ -1,0 +1,12 @@
+[
+  {
+    "name": "Plugin 1.0",
+    "beschreibung": "Erstes Plugin zum Herunterladen.",
+    "datei": "/src/plugin_files/tempPlugin-1.0.jar"
+  },
+  {
+    "name": "Plugin 2.0",
+    "beschreibung": "Zweites Plugin zum Herunterladen.",
+    "datei": "/src/plugin_files/tempPlugin-1.0.jar"
+  }
+]
