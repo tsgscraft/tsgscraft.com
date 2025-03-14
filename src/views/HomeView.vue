@@ -6,7 +6,6 @@
 
       <!-- <img src="/pictures/code1.jpeg" alt="code1" class="img-code-1"> -->
 
-      <!-- Downloads Section -->
       <section id="plugins" class="py-16 bg-gray-200 dark:bg-gray-700 text-center">
         <h2 class="text-2xl font-bold">Plugins</h2>
         <router-link
