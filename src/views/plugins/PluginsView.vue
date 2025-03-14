@@ -6,8 +6,8 @@ export default {
       };
     },
     mounted() {
-      // JSON-Daten von GitHub laden
-      fetch('https://raw.githubusercontent.com/tsgscraft/tsgscraft.com/refs/heads/master/public/files.json')
+      // JSON-Daten von GitHub laden - https://raw.githubusercontent.com/tsgscraft/tsgscraft.com/refs/heads/master/public/files.json
+      fetch('files.json')
           .then(response => {
             if (!response.ok) {
               throw new Error('Netzwerkantwort war nicht ok');
@@ -22,7 +22,7 @@ export default {
           });
     },
   methods: {
-    downloadFile(url) {
+    openUrl(url) {
       if (!url) {
         console.error('Keine gültige URL zum Herunterladen angegeben.');
         return;
@@ -30,21 +30,33 @@ export default {
       // Navigiert zur angegebenen URL, was den Download der Datei auslöst
       window.location.href = url;
     },
+    copyText(text) {
+      if (!text) {
+        console.error('Kein gültiger Text angegeben.');
+        return;
+      }
+
+      navigator.clipboard.writeText(text);
+    },
   },
 };
 </script>
 
 <template>
   <div class="p-4">
-    <h1 class="text-2xl"><router-link to="/">Downloads</router-link></h1>
-    <p class="bit-left">Hier kannst du Dateien herunterladen.</p>
+    <h1 class="text-2xl"><router-link to="/">Plugins</router-link></h1>
     <div id="card-container">
       <!-- Dynamisch Karten erstellen -->
       <div v-for="item in downloads" :key="item.name" class="card">
         <div class="container">
           <h2><b>{{ item.name }}</b></h2>
           <p>{{ item.beschreibung }}</p>
-          <button @click="downloadFile(item.datei)" type="button" class="button-3" :disabled="item.disabled">Download</button>
+          <div class="card-buttons">
+            <button @click="openUrl(item.datei)" type="button" class="button-1 card-button" :disabled="item.disabled"><img src="/public/download.svg" alt="download" class="icon"></button>
+            <button @click="openUrl(item.githubVersions)" type="button" class="button-2 card-button" :disabled="item.disabled"><img src="/public/version.svg" alt="versions" class="icon"></button>
+            <button @click="openUrl(item.githubCode)" type="button" class="button-4 card-button" :disabled="item.disabled"><img src="/public/github-mark.svg" alt="github" class="icon"></button>
+            <button @click="copyText(item.datei)" type="button" class="button-3 card-button" :disabled="item.disabled"><img src="/public/copy.svg" alt="copy" class="icon"></button>
+          </div>
         </div>
       </div>
     </div>
@@ -66,6 +78,11 @@ export default {
   background-color: #282828;
   padding-top: 1rem;
   padding-bottom: 1rem;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .card:hover {
@@ -74,9 +91,153 @@ export default {
 
 .container {
   padding: 2px 16px;
+  flex-grow: 1;
 }
 
-.bit-left {
-  margin-left: 8px;
+.card-buttons {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: auto;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  display: flex;
+}
+
+.card-button {
+  appearance: none;
+  background-color: #2ea44f;
+  border: 1px solid rgba(27, 31, 35, .15);
+  border-radius: 6px;
+  box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  padding: 6px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  white-space: nowrap;
+  width: 100%;
+  margin-top: 1rem;
+  justify-items: center;
+}
+
+.card-button:focus:not(:focus-visible):not() {
+  box-shadow: none;
+  outline: none;
+}
+
+.card-button:hover {
+  background-color: #2c974b;
+}
+
+.card-button:focus {
+  box-shadow: rgba(46, 164, 79, .4) 0 0 0 3px;
+  outline: none;
+}
+
+.card-button:active {
+  background-color: #298e46;
+  box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;
+}
+
+.card-button:disabled {
+  background-color: #94d3a2;
+  border-color: rgba(27, 31, 35, .1);
+  color: rgba(255, 255, 255, .8);
+  cursor: default;
+}
+
+.button-1 {
+  background-color: #2ea44f;
+}
+
+.button-2 {
+  background-color: #dab52f;
+}
+
+.button-3 {
+  background-color: #c01515;
+}
+
+.button-4 {
+  background-color: #0d74e7;
+}
+
+.button-1:focus {
+  box-shadow: rgba(46, 164, 79, .4) 0 0 0 3px;
+}
+
+.button-2:focus {
+  box-shadow: rgba(218, 181, 47, .4) 0 0 0 3px;
+}
+
+.button-3:focus {
+  box-shadow: rgba(192, 21, 21, 0.4) 0 0 0 3px;
+}
+
+.button-4:focus {
+  box-shadow: rgb(13, 116, 231) 0 0 0 3px;
+}
+
+.button-1:hover {
+  background-color: #2c974b;
+}
+
+.button-2:hover {
+  background-color: #cba92c;
+}
+
+.button-3:hover {
+  background-color: #b61414;
+}
+
+.button-4:hover {
+  background-color: #0b6bd5;
+}
+
+.button-1:active {
+  background-color: #298e46;
+}
+
+.button-2:active {
+  background-color: #ab8e25;
+}
+
+.button-3:active {
+  background-color: #911010;
+}
+
+.button-4:active {
+  background-color: #085cbb;
+}
+
+.button-1:disabled {
+  background-color: #94d3a2;
+}
+
+.button-2:disabled {
+  background-color: #dac78b;
+}
+
+.button-3:disabled {
+  background-color: #e06565;
+}
+
+.button-4:disabled {
+  background-color: #8db7f5;
 }
 </style>
