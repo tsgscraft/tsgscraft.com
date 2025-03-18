@@ -43,8 +43,7 @@ export default {
 </script>
 
 <template>
-  <div class="p-4">
-    <h1 class="text-2xl"><router-link to="/">Plugins</router-link></h1>
+  <div class="p-4" style="padding: 2rem">
     <div id="card-container">
       <!-- Dynamisch Karten erstellen -->
       <div v-for="item in downloads" :key="item.name" class="card">
@@ -52,14 +51,17 @@ export default {
           <h2><b>{{ item.name }}</b></h2>
           <p>{{ item.beschreibung }}</p>
           <div class="card-buttons">
-            <button @click="openUrl(item.datei)" type="button" class="button-1 card-button" :disabled="item.disabled"><img src="/public/download.svg" alt="download" class="icon"></button>
-            <button @click="openUrl(item.githubVersions)" type="button" class="button-2 card-button" :disabled="item.disabled"><img src="/public/version.svg" alt="versions" class="icon"></button>
-            <button @click="openUrl(item.githubCode)" type="button" class="button-4 card-button" :disabled="item.disabled"><img src="/public/github-mark.svg" alt="github" class="icon"></button>
-            <button @click="copyText(item.datei)" type="button" class="button-3 card-button" :disabled="item.disabled"><img src="/public/copy.svg" alt="copy" class="icon"></button>
+            <button @click="openUrl(item.datei)" type="button" class="button-1 card-button" :disabled="item.disabled"><img src="/src/assets/icons/download.svg" alt="download" class="icon"></button>
+            <button @click="openUrl(item.githubVersions)" type="button" class="button-2 card-button" :disabled="item.disabled"><img src="/src/assets/icons/version.svg" alt="versions" class="icon"></button>
+            <button @click="openUrl(item.githubCode)" type="button" class="button-4 card-button" :disabled="item.disabled"><img src="/src/assets/icons/github-mark.svg" alt="github" class="icon"></button>
+            <button @click="copyText(item.datei)" type="button" class="button-3 card-button" :disabled="item.disabled"><img src="/src/assets/icons/copy.svg" alt="copy" class="icon"></button>
           </div>
         </div>
       </div>
     </div>
+  </div>
+  <div class="background-image-container">
+    <img src="/src/assets/pictures/minecraft_1.jpeg" alt="Minecraft 1" class="background-image">
   </div>
 </template>
 
@@ -131,7 +133,7 @@ export default {
   vertical-align: middle;
   white-space: nowrap;
   width: 100%;
-  margin-top: 1rem;
+  margin: 1rem auto auto;
   justify-items: center;
 }
 
@@ -239,5 +241,23 @@ export default {
 
 .button-4:disabled {
   background-color: #8db7f5;
+}
+
+.background-image-container {
+  overflow: hidden;
+}
+
+.background-image {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  user-drag: none;
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
 </style>
