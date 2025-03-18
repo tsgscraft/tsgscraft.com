@@ -66,7 +66,7 @@ export default {
 
 <style scoped>
 body {
-  background-image: url('src/assets/pictures/minecraft1.jpeg');
+  background-image: url('/src/assets/pictures/minecraft1.jpeg');
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
