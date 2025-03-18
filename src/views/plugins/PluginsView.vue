@@ -146,7 +146,7 @@ body {
   justify-items: center;
 }
 
-.card-button:focus:not(:focus-visible):not() {
+.card-button:focus:not(:focus-visible) {
   box-shadow: none;
   outline: none;
 }
