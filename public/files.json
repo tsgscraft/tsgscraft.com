@@ -2,73 +2,64 @@
   {
     "name": "Presets",
     "beschreibung": "A dependency plugin for developed Plugins.",
-    "datei": "https://github.com/tsgscraft/presets/releases/latest/download/presets-1.6.jar",
-    "githubVersions": "https://github.com/tsgscraft/presets/releases",
-    "githubCode": "https://github.com/tsgscraft/presets",
+    "file_name": "presets-1.6.jar",
+    "repo": "https://github.com/tsgscraft/presets",
     "disabled": false
   },
   {
     "name": "Plugin 2.0",
     "beschreibung": "Zweites Plugin zum Herunterladen.",
-    "datei": "/plugin_files/tempPlugin-1.0.jar",
-    "githubVersions": "https://github.com/tsgscraft/presets/releases",
-    "githubCode": "https://github.com/tsgscraft/presets",
+    "file_name": "presets-1.6.jar",
+    "repo": "https://github.com/tsgscraft/presets",
     "disabled": true
   },
   {
     "name": "Plugin 3.0",
     "beschreibung": "Drittes Plugin zum Herunterladen.",
-    "datei": "/plugin_files/tempPlugin-1.0.jar",
-    "githubVersions": "https://github.com/tsgscraft/presets/releases",
-    "githubCode": "https://github.com/tsgscraft/presets",
+    "file_name": "presets-1.6.jar",
+    "repo": "https://github.com/tsgscraft/presets",
     "disabled": true
   },
   {
     "name": "Plugin 4.0",
     "beschreibung": "Viertes Plugin zum Herunterladen.",
-    "datei": "/plugin_files/tempPlugin-1.0.jar",
-    "githubVersions": "https://github.com/tsgscraft/presets/releases",
-    "githubCode": "https://github.com/tsgscraft/presets",
+    "file_name": "presets-1.6.jar",
+    "repo": "https://github.com/tsgscraft/presets",
     "disabled": true
   },
   {
     "name": "Plugin 5.0",
     "beschreibung": "Fünftes Plugin zum Herunterladen.",
-    "datei": "/plugin_files/tempPlugin-1.0.jar",
-    "githubVersions": "https://github.com/tsgscraft/presets/releases",
-    "githubCode": "https://github.com/tsgscraft/presets",
+    "file_name": "presets-1.6.jar",
+    "repo": "https://github.com/tsgscraft/presets",
     "disabled": true
   },
   {
     "name": "Plugin 6.0",
     "beschreibung": "Sechstes Plugin zum Herunterladen.",
-    "datei": "/plugin_files/tempPlugin-1.0.jar",
-    "githubVersions": "https://github.com/tsgscraft/presets/releases",
-    "githubCode": "https://github.com/tsgscraft/presets",
+    "file_name": "presets-1.6.jar",
+    "repo": "https://github.com/tsgscraft/presets",
     "disabled": true
   },
   {
     "name": "Plugin 7.0",
     "beschreibung": "Siebtes Plugin zum Herunterladen.",
-    "datei": "/plugin_files/tempPlugin-1.0.jar",
-    "githubVersions": "https://github.com/tsgscraft/presets/releases",
-    "githubCode": "https://github.com/tsgscraft/presets",
+    "file_name": "presets-1.6.jar",
+    "repo": "https://github.com/tsgscraft/presets",
     "disabled": true
   },
   {
     "name": "Plugin 8.0",
     "beschreibung": "Achtes Plugin zum Herunterladen.",
-    "datei": "/plugin_files/tempPlugin-1.0.jar",
-    "githubVersions": "https://github.com/tsgscraft/presets/releases",
-    "githubCode": "https://github.com/tsgscraft/presets",
+    "file_name": "presets-1.6.jar",
+    "repo": "https://github.com/tsgscraft/presets",
     "disabled": true
   },
   {
     "name": "Plugin 9.0",
     "beschreibung": "Neuntes Plugin zum Herunterladen.",
-    "datei": "/plugin_files/tempPlugin-1.0.jar",
-    "githubVersions": "https://github.com/tsgscraft/presets/releases",
-    "githubCode": "https://github.com/tsgscraft/presets",
+    "file_name": "presets-1.6.jar",
+    "repo": "https://github.com/tsgscraft/presets",
     "disabled": true
   }
 ]

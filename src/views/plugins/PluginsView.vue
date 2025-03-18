@@ -43,7 +43,8 @@ export default {
 </script>
 
 <template>
-  <div class="p-4" style="padding: 2rem">
+  <body>
+  <div class="p-4" style="padding: 5rem 2rem 2rem;">
     <div id="card-container">
       <!-- Dynamisch Karten erstellen -->
       <div v-for="item in downloads" :key="item.name" class="card">
@@ -51,21 +52,31 @@ export default {
           <h2><b>{{ item.name }}</b></h2>
           <p>{{ item.beschreibung }}</p>
           <div class="card-buttons">
-            <button @click="openUrl(item.datei)" type="button" class="button-1 card-button" :disabled="item.disabled"><img src="/src/assets/icons/download.svg" alt="download" class="icon"></button>
-            <button @click="openUrl(item.githubVersions)" type="button" class="button-2 card-button" :disabled="item.disabled"><img src="/src/assets/icons/version.svg" alt="versions" class="icon"></button>
-            <button @click="openUrl(item.githubCode)" type="button" class="button-4 card-button" :disabled="item.disabled"><img src="/src/assets/icons/github-mark.svg" alt="github" class="icon"></button>
-            <button @click="copyText(item.datei)" type="button" class="button-3 card-button" :disabled="item.disabled"><img src="/src/assets/icons/copy.svg" alt="copy" class="icon"></button>
+            <button @click="openUrl(item.repo + '/releases/latest/download/' + item.file_name)" type="button" class="button-1 card-button" :disabled="item.disabled"><img src="/src/assets/icons/download.svg" alt="download" class="icon"></button>
+            <button @click="openUrl(item.repo + '/releases')" type="button" class="button-2 card-button" :disabled="item.disabled"><img src="/src/assets/icons/version.svg" alt="versions" class="icon"></button>
+            <button @click="openUrl(item.repo)" type="button" class="button-4 card-button" :disabled="item.disabled"><img src="/src/assets/icons/github-mark.svg" alt="github" class="icon"></button>
+            <button @click="copyText(item.repo + '/releases/latest/download/' + item.file_name)" type="button" class="button-3 card-button" :disabled="item.disabled"><img src="/src/assets/icons/copy.svg" alt="copy" class="icon"></button>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="background-image-container">
-    <img src="/src/assets/pictures/minecraft_1.jpeg" alt="Minecraft 1" class="background-image">
-  </div>
+  </body>
 </template>
 
 <style scoped>
+body {
+  background-image: url('src/assets/pictures/minecraft_1.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position-x: 50%;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
 #card-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -127,8 +138,6 @@ export default {
   position: relative;
   text-align: center;
   text-decoration: none;
-  user-select: none;
-  -webkit-user-select: none;
   touch-action: manipulation;
   vertical-align: middle;
   white-space: nowrap;
@@ -241,23 +250,5 @@ export default {
 
 .button-4:disabled {
   background-color: #8db7f5;
-}
-
-.background-image-container {
-  overflow: hidden;
-}
-
-.background-image {
-  position: absolute;
-  width: 100%;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  user-drag: none;
-  -webkit-user-drag: none;
-  user-select: none;
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
 }
 </style>

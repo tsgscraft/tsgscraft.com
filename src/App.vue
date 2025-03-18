@@ -37,12 +37,6 @@
 
 .img-nav {
   height: 5rem;
-  user-drag: none;
-  -webkit-user-drag: none;
-  user-select: none;
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
 }
 
 .navi-div {
@@ -54,6 +48,19 @@
 
 .App-header {
   position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 971px) {
+  .App-header {
+    zoom: 0.7;
+  }
+}
+
+@media (max-width: 700px) {
+  .App-header {
+    zoom: 0.5;
+  }
 }
 </style>
 
