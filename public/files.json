@@ -62,5 +62,13 @@
     "githubVersions": "https://github.com/tsgscraft/presets/releases",
     "githubCode": "https://github.com/tsgscraft/presets",
     "disabled": true
+  },
+  {
+    "name": "Plugin 9.0",
+    "beschreibung": "Neuntes Plugin zum Herunterladen.",
+    "datei": "/plugin_files/tempPlugin-1.0.jar",
+    "githubVersions": "https://github.com/tsgscraft/presets/releases",
+    "githubCode": "https://github.com/tsgscraft/presets",
+    "disabled": true
   }
 ]
