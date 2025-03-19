@@ -6,8 +6,7 @@ export default {
       };
     },
     mounted() {
-      // JSON-Daten von GitHub laden - https://raw.githubusercontent.com/tsgscraft/tsgscraft.com/refs/heads/master/public/files.json
-      fetch('files.json')
+      fetch('https://raw.githubusercontent.com/tsgscraft/tsgscraft.com-files/refs/heads/main/plugins.json')
           .then(response => {
             if (!response.ok) {
               throw new Error('Netzwerkantwort war nicht ok');
