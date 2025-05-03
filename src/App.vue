@@ -1,5 +1,5 @@
 <template>
-  <header class="App-header">
+  <header v-if="!$route.meta.hideHeader" class="App-header">
     <nav class="flex flex-wrap items-center justify-between head-nav">
       <img src="/src/assets/elements/nav.svg" alt="nav" class="img-nav">
       <h1 class="font-semibold text-xl navi-div">

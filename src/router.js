@@ -3,6 +3,7 @@ import Home from '../src/views/HomeView.vue';
 import PluginsView from './views/plugins/PluginsView.vue';
 import PythonView from "./views/PythonView.vue";
 import ToolsView from "./views/ToolsView.vue";
+import NotFound from './views/NotFound.vue';
 
 const routes = [
     {
@@ -24,6 +25,12 @@ const routes = [
         path: '/tools',
         name: 'Tools',
         component: ToolsView
+    },
+    {
+        path: '/:pathMatch(.*)*',
+        name: 'NotFound',
+        component: NotFound,
+        meta: { hideHeader: true }
     }
 ];
 
